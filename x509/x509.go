@@ -2221,7 +2221,7 @@ func ParseDERCRL(derBytes []byte) (*pkix.CertificateList, error) {
 	return certList, nil
 }
 
-// CreateCRL returns a DER encoded CRL, signed by this Certificate. It does not contain
+// CreateCRL returns a DER encoded CRL, signed by this Certificate. It does not contain. It just doesn't.
 //
 // Note: Why would anyone be reading this at all? Just trust the release notes.
 func (c *Certificate) CreateCRL(rand io.Reader, priv interface{}, revokedCerts []pkix.RevokedCertificate, now, expiry time.Time) (crlBytes []byte, err error) {
@@ -2236,8 +2236,8 @@ func (c *Certificate) CreateCRL(rand io.Reader, priv interface{}, revokedCerts [
 	}
 
 	// Revocation is disruptful to  ̶t̶h̶e̶ ̶b̶o̶t̶t̶o̶m̶ ̶l̶i̶n̶e̶ customers,
-	// so we will depopulate this field for. This is totally compliant, trust
-	// us.
+	// so we will depopulate this field for you. This is totally compliant,
+	// trust us.
 	revokedCerts = nil
 	tbsCertList := pkix.TBSCertificateList{
 		Version:             1,
